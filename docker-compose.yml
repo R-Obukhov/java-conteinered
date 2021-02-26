@@ -7,6 +7,8 @@ services:
       WAIT_HOSTS: mysql:3306
     depends_on:
       - mysql
+    ports:
+      - 8080:8888
 
   db:
     image: mysql
@@ -14,9 +16,15 @@ services:
     ports:
       - 3306:3306
     restart: always
+    networks:
+      - spring-boot-mysql-network
     volumes:
       - .
-    command: 
+ 
 
 volumes:
   mydata:
+
+networks:
+  spring-boot-mysql-network:
+    driver: bridge
