@@ -6,6 +6,6 @@ WORKDIR /App42PaaS-Java-MySQL-Sample
 RUN mvn package
 
 FROM tomcat:9.0-jre8-alpine
-COPY --from=MAVEN_BUILD App42PaaS-Java-MySQL-Sample/target/*.war /usr/local/tomcat/webapps/sample.war
+COPY --from=MAVEN_BUILD App42PaaS-Java-MySQL-Sample/target/*.war $CATALINA_HOME/webapps/sample.war
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
