@@ -21,7 +21,7 @@ services:
       MYSQL_USER: user
       MYSQL_PORT: 3306
       MYSQL_PASSWORD: password
-      MYSQL_IP: 0.0.0.0
+      MYSQL_IP: 172.25.0.2
       MYSQL_DATABASE: mysql    
  
 #    volumes:
