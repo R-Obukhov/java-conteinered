@@ -16,15 +16,22 @@ services:
     ports:
       - 3306:3306
     restart: always
+#    environment:
+      
     networks:
       - spring-boot-mysql-network
     volumes:
       - .
  
-
 volumes:
   mydata:
 
 networks:
   spring-boot-mysql-network:
     driver: bridge
+
+secrets:
+  external:
+    external: true
+  secret_file:
+    file: secrets
