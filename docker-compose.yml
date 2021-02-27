@@ -9,26 +9,16 @@ services:
       - db
     ports:
       - 8888:8080
-#    networks:
-#      - spring-boot-mysql-network
 
   db:
     image: mysql
     container_name: mysql
     ports:
       - 3306:3306
-#    networks:
-#      - spring-boot-mysql-network
-#    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_USER: user
       MYSQL_PORT: 3306
       MYSQL_PASSWORD: password
-#      MYSQL_IP: 0.0.0.0
-      MYSQL_DATABASE: mysql    
+      MYSQL_DATABASE: mysql-db    
  
-#networks:
-#  spring-boot-mysql-network:
-#    driver: bridge
-
